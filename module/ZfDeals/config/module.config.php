@@ -3,7 +3,7 @@
 return array(
     'router' => array(
         'routes' => array(
-            'admin\home' => array(
+            'zf-deals\admin\home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/deals/admin',
@@ -13,7 +13,7 @@ return array(
                     ),
                 ),
             ),
-            'admin\product\add' => array(
+            'zf-deals\admin\product\add' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/deals/admin/product/add',
