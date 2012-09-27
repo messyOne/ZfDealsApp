@@ -11,6 +11,7 @@
         "php": ">=5.3.3",
         "zendframework/zendframework": "dev-master",
         "dlu/dlutwbootstrap": "dev-master",
-        "firephp/firephp-core": "dev-master"
+        "firephp/firephp-core": "dev-master",
+        "phpunit/phpunit": "3.7.*"
     }
 }
