@@ -24,7 +24,7 @@ class AdminController extends AbstractActionController
             $form->setData($this->getRequest()->getPost());
             
             if ($form->isValid()) {
-                die("yeah");
+                return $this->redirect()->toRoute('zf-deals\admin\product\add');
             } else {
                 return new ViewModel(
                     array(
