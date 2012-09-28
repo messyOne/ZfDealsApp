@@ -9,7 +9,7 @@ use ZfDeals\Form\ProductAdd;
  *
  * @author messy
  */
-class ProductAddTest extends \PHPUnit_Framework_Assert
+class ProductAddTest extends \PHPUnit_Framework_TestCase
 {
 
     private $form;

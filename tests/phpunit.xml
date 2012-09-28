@@ -6,7 +6,7 @@
 >
     <testsuites>
         <testsuite name="AllTests">
-            <directory>./ZfDealsTest/FormTest</directory>
+            <directory suffix="Test.php">./ZfDealsTest/FormTest</directory>
         </testsuite>
     </testsuites>
 </phpunit>
