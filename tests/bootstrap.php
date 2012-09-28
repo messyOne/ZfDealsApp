@@ -3,7 +3,7 @@ use Zend\Loader\StandardAutoloader;
 
 chdir(dirname(__DIR__));
 
-include_once __DIR__ . '/../init_autoloader.php';
+include_once 'init_autoloader.php';
 
 $loader = new StandardAutoloader();
 $loader->registerNamespace('ZfDealsTest', __DIR__ . '/ZfDealsTest');
