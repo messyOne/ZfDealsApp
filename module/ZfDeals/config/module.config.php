@@ -27,8 +27,8 @@ return array(
     ),
     
     'controllers' => array(
-        'invokables' => array(
-            'ZfDeals\Controller\Admin' => 'ZfDeals\Controller\AdminController'
+        'factories' => array(
+            'ZfDeals\Controller\Admin' => 'ZfDeals\Controller\AdminControllerFactory'
         ),
     ),
     
@@ -40,4 +40,30 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    
+    'service_manager' => array(
+        'factories' => array(
+            'Zend\Db\Adapter\Adapter' => function ($sm) {
+                $config = $sm->get('Config');
+                $dbParams = $config['dbParams'];
+
+                return new Zend\Db\Adapter\Adapter(
+                    array(
+                        'driver' => 'pdo',
+                        'dsn' => 'mysql:dbname='.$dbParams['database'].';host='.$dbParams['hostname'],
+                        'database' => $dbParams['database'],
+                        'username' => $dbParams['username'],
+                        'password' => $dbParams['password'],
+                        'hostname' => $dbParams['hostname'],
+                    )
+                );
+            },
+            'ZfDeals\Mapper\Product' => function ($sm) {
+                return new \ZfDeals\Mapper\Product(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },
+
+        )
+    )
 );

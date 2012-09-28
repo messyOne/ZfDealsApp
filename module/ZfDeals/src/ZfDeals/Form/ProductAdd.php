@@ -22,6 +22,12 @@ class ProductAdd extends Form
                 'use_as_base_fieldset' => true
             )
         ));
+        
+        $this->add(array(
+                'type' => 'Zend\Form\Element\Csrf',
+                'name' => 'security',
+            )
+        );
                 
         $this->add(array(
             'name' => 'submit',
