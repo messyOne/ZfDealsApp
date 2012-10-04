@@ -1,24 +1,16 @@
 <?php
-
-namespace ZfDeals\FormTest;
+namespace ZfDealsTest\FormTest;
 
 use ZfDeals\Form\ProductAdd;
 
-/**
- * Description of ProductAddTest
- *
- * @author messy
- */
 class ProductAddTest extends \PHPUnit_Framework_TestCase
 {
-
     private $form;
     private $data;
 
     public function setUp()
     {
         $this->form = new ProductAdd();
-
         $this->data = array(
             'product' => array(
                 'id' => '',
@@ -49,18 +41,18 @@ class ProductAddTest extends \PHPUnit_Framework_TestCase
     {
         $form = $this->form;
         $data = $this->data;
-        
         $data['product']['id'] = 1;
         $data['product']['name'] = 1;
+
         $data['product']['stock'] = -1;
         $this->assertFalse($form->setData($data)->isValid());
-        
+
         $data['product']['stock'] = "test";
         $this->assertFalse($form->setData($data)->isValid());
-        
+
         $data['product']['stock'] = 12.3;
         $this->assertFalse($form->setData($data)->isValid());
-        
+
         $data['product']['stock'] = 12;
         $this->assertTrue($form->setData($data)->isValid());
     }
